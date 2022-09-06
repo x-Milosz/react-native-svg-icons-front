@@ -1,5 +1,6 @@
-import { AsyncUseCase } from "../../base/AsyncUseCase.interface";
+import { WebWorkerAsyncOperationT } from "../../util/WebWorkerAsyncOperation.type";
 
 export abstract class AsyncWebWorkerService {
-    public abstract startWebWorker<T>(asyncUseCase: AsyncUseCase<T>): Promise<T>;
+    public abstract startWebWorker<T>
+        (webWorkerAsyncOperation: WebWorkerAsyncOperationT<T>): Promise<T>;
 }

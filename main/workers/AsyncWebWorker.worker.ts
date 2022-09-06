@@ -1,19 +1,20 @@
-import { AsyncUseCase } from "../base/AsyncUseCase.interface";
+import { WebWorkerAsyncOperationT } from "./../util/WebWorkerAsyncOperation.type";
 
 const isMessageEventConsistingOfAsyncUseCase = 
-        <T>(obj: any): obj is MessageEvent<AsyncUseCase<T>> => {
-            return (<MessageEvent<AsyncUseCase<T>>>obj)["data"]["execute"] !== undefined;
+        <T>(obj: any): obj is MessageEvent<WebWorkerAsyncOperationT<T>> => {
+            return (<MessageEvent<WebWorkerAsyncOperationT<T>>>obj) !== undefined;
         };
 
 onmessage = (messageEvent) => {
     if(!isMessageEventConsistingOfAsyncUseCase(messageEvent)) {
-        throw Error("AsyncWebWorker: Async web worker data has to be AsyncUseCase type");
+        throw Error("AsyncWebWorker: Async web worker data has to " + 
+            "be WebWorkerAsyncOperationT type");
     }
 
-    const asyncUseCase = messageEvent.data;
+    const webWorkerAsyncOperation = messageEvent.data;
 
     const executeAsyncUseCase = async () => {
-        const asyncUseCaseResult = await asyncUseCase.execute();
+        const asyncUseCaseResult = await webWorkerAsyncOperation();
         postMessage(asyncUseCaseResult);
     };
     executeAsyncUseCase();
