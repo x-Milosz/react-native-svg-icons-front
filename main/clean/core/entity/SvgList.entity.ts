@@ -15,35 +15,35 @@ export class SvgList {
         this._contentList = contentList;
     }
 
-    get page() {
+    public get page() {
         return this._page;
     }
 
-    set page(page: number) {
+    public set page(page: number) {
         this._page = page;
     }
 
-    get pages() {
+    public get pages() {
         return this._pages;
     }
 
-    set pages(pages: number) {
+    public set pages(pages: number) {
         this._pages = pages;
     }
 
-    get total() {
+    public get total() {
         return this._total;
     }
 
-    set total(total: number) {
+    public set total(total: number) {
         this._total = total;
     }
 
-    get contentList()  {
+    public get contentList()  {
         return this._contentList;
     }
 
-    set contentList(contentList: {
+    public set contentList(contentList: {
         id: number;
         name: string;
     }[]) {
