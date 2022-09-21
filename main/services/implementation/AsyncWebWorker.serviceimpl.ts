@@ -3,7 +3,8 @@ import { AsyncWebWorkerService } from "../abstract/AsyncWebWorker.service";
 import { WebWorkerAsyncOperationT } from "../../util/WebWorkerAsyncOperation.type";
 
 class AsyncWebWorkerServiceImpl implements AsyncWebWorkerService {
-    public async startWebWorker<T>(webWorkerAsyncOperation: WebWorkerAsyncOperationT<T>): Promise<T> {
+    public async startWebWorker<T>(webWorkerAsyncOperation: 
+            WebWorkerAsyncOperationT<T>): Promise<T> {
         const asyncWebWorker = new Worker(new URL("../../workers/AsyncWebWorker.worker.ts", 
             import.meta.url));
         asyncWebWorker.postMessage(webWorkerAsyncOperation);

@@ -48,4 +48,4 @@ rules:
   max-len:
     - error
     - ignorePattern: "^import .*"
-    - code: 100
+    - code: 140
