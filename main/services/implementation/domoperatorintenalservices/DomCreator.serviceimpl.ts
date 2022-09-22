@@ -1,9 +1,7 @@
-import { DomObject } from "./../../util/DomObject.class";
-import { DomTree } from "../../util/DomTree.class";
-import { DomCreatorService } from "../abstract/DomCreator.service";
-import { DomAttributeValue } from "../../util/DomAttributeValue.class";
-
-
+import { DomAttributeValue } from "../../../util/DomAttributeValue.class";
+import { DomObject } from "../../../util/DomObject.class";
+import { DomTree } from "../../../util/DomTree.class";
+import { DomCreatorService } from "../../abstract/domoperatorinternalservices/DomCreator.service";
 
 export class DomCreatorServiceImpl implements DomCreatorService {
     public parseAndCreateDomTree(toParseString: string): DomTree {

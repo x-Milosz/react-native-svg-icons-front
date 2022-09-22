@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 
-import { DomAttributeValue } from "./../../main/util/DomAttributeValue.class";
-import { DomTree } from "./../../main/util/DomTree.class";
-import { DomCreatorServiceImpl } from "./../../main/services/implementation/DomCreator.serviceimpl";
-import { DomCreatorService } from "../../main/services/abstract/DomCreator.service";
-import { DomObject } from "../../main/util/DomObject.class";
+import { DomAttributeValue } from "../../../main/util/DomAttributeValue.class";
+import { DomTree } from "../../../main/util/DomTree.class";
+import { DomCreatorService } from "../../../main/services/abstract/domoperatorinternalservices/DomCreator.service";
+import { DomObject } from "../../../main/util/DomObject.class";
+import { DomCreatorServiceImpl } from "../../../main/services/implementation/domoperatorintenalservices/DomCreator.serviceimpl";
 
 describe("DomCreatorService tests", () => {
     it("Should svg by parsed properly by DomCreatorService", () => {

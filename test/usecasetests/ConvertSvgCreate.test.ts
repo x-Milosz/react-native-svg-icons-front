@@ -1,19 +1,22 @@
 /* eslint-disable max-len */
-import { DomSerializerServiceImpl } from "./../../main/services/implementation/DomSerializer.serviceimpl";
+import { DomSerializerServiceImpl } from "../../main/services/implementation/domoperatorintenalservices/DomSerializer.serviceimpl";
 import { RNDomManipulatorServiceImpl } from "./../../main/services/implementation/RNDomManipulator.serviceimpl";
-import { DomCreatorServiceImpl } from "./../../main/services/implementation/DomCreator.serviceimpl";
 import { ConvertedSvgCreateAsyncUseCase } from 
     "../../main/clean/core/usecase/abstract/ConvertedSvgCreate.asyncusecase";
 import { ConvertedSvCreateAsyncUseCaseImpl } from 
     "../../main/clean/core/usecase/implementation/ConvertSvgCreate.asyncusecaseimpl";
 import { DummyAsyncWebWorkerServiceImpl } from "../data/dummyasyncwebworkers/DummyAsyncWebWorker.serviceimpl";
 import { DummyConvertedSvgRepository } from "../data/dummyrepositories/DummyConvertedSvg.repository";
+import { DomOperatorServiceImpl } from "../../main/services/implementation/DomOperator.serviceimpl";
+import { DomCreatorServiceImpl } from "../../main/services/implementation/domoperatorintenalservices/DomCreator.serviceimpl";
 
 describe("ConvertSvgCreate tests", () => {
     it("ConvertSvgCreate default transition", async () => {
         const convertedSvgCreate: ConvertedSvgCreateAsyncUseCase
-             = new ConvertedSvCreateAsyncUseCaseImpl(new DummyConvertedSvgRepository(), new DummyAsyncWebWorkerServiceImpl(),
-                 new DomCreatorServiceImpl(), new RNDomManipulatorServiceImpl(), new DomSerializerServiceImpl());
+             = new ConvertedSvCreateAsyncUseCaseImpl(new DummyConvertedSvgRepository(), 
+             new DummyAsyncWebWorkerServiceImpl(), 
+             new DomOperatorServiceImpl(new DomCreatorServiceImpl(), new DomSerializerServiceImpl()), 
+             new RNDomManipulatorServiceImpl());
         const response = await convertedSvgCreate.execute(1);
         expect(response.svg).toEqual(
             "import * as React from \"react\";" +

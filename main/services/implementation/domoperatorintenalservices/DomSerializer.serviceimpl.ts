@@ -1,6 +1,6 @@
-import { DomObject } from "./../../util/DomObject.class";
-import { DomTree } from "../../util/DomTree.class";
-import { DomSerializerService } from "../abstract/DomSerializer.service";
+import { DomObject } from "../../../util/DomObject.class";
+import { DomTree } from "../../../util/DomTree.class";
+import { DomSerializerService } from "../../abstract/domoperatorinternalservices/DomSerializer.service";
 
 export class DomSerializerServiceImpl implements DomSerializerService {
     public serializeDomTree(domTree: DomTree): string {

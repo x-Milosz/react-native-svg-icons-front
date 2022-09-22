@@ -1,6 +1,6 @@
 import { AsyncWebWorkerService } from "../../../../services/abstract/AsyncWebWorker.service";
-import { DomCreatorService } from "../../../../services/abstract/DomCreator.service";
-import { DomSerializerService } from "../../../../services/abstract/DomSerializer.service";
+import { DomOperatorService } from "../../../../services/abstract/DomOperator.service";
+import { DomCreatorService } from "../../../../services/abstract/domoperatorinternalservices/DomCreator.service";
 import { RNDomManipulatorService } from "../../../../services/abstract/RNDomManipulator.service";
 import { ConvertedSvgRepository } from "../../../data/repository/abstract/ConvertedSvg.repository";
 import { ConvertedSvg } from "../../entity/ConvertedSvg.entity";
@@ -9,18 +9,16 @@ import { ConvertedSvgCreateAsyncUseCase } from "../abstract/ConvertedSvgCreate.a
 export class ConvertedSvCreateAsyncUseCaseImpl implements ConvertedSvgCreateAsyncUseCase {
     private _convertedSvgRepository: ConvertedSvgRepository;
     private _asyncWebWorkerService: AsyncWebWorkerService;
-    private _domCreatorService: DomCreatorService;
+    private _domOperator: DomOperatorService;
     private _rnDomManipulatorService: RNDomManipulatorService;
-    private _domSerializerService: DomSerializerService;
 
     constructor(convertedSvgRepository: ConvertedSvgRepository, 
-        asyncWebWorkerService: AsyncWebWorkerService, domCreatorService: DomCreatorService,
-        rnDomManipulatorService: RNDomManipulatorService, domSerializerService: DomSerializerService) {
+        asyncWebWorkerService: AsyncWebWorkerService, domOperator: DomOperatorService,
+        rnDomManipulatorService: RNDomManipulatorService) {
         this._convertedSvgRepository = convertedSvgRepository;
         this._asyncWebWorkerService = asyncWebWorkerService;
-        this._domCreatorService = domCreatorService;
         this._rnDomManipulatorService = rnDomManipulatorService;
-        this._domSerializerService = domSerializerService;
+        this._domOperator = domOperator;
     }
 
     public async execute(id: number): Promise<ConvertedSvg> {
@@ -64,9 +62,9 @@ export class ConvertedSvCreateAsyncUseCaseImpl implements ConvertedSvgCreateAsyn
     }
 
     private parseSingleSvgAndGenerateRNSvgCode(svgStr: string): string {
-        const domTree = this._domCreatorService.parseAndCreateDomTree(svgStr);
+        const domTree = this._domOperator.parseAndCreateDomTree(svgStr);
         const rnDomTree = this._rnDomManipulatorService.convertDomTreeToReactNative(domTree);
-        return this._domSerializerService.serializeDomTree(rnDomTree);
+        return this._domOperator.serializeDomTree(rnDomTree);
     }
     
 

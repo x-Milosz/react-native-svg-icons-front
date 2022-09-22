@@ -1,10 +1,11 @@
 /* eslint-disable max-len */
 
-import { DomSerializerServiceImpl } from "./../../main/services/implementation/DomSerializer.serviceimpl";
-import { DomAttributeValue } from "../../main/util/DomAttributeValue.class";
-import { DomObject } from "../../main/util/DomObject.class";
-import { DomTree } from "../../main/util/DomTree.class";
-import { DomSerializerService } from "../../main/services/abstract/DomSerializer.service";
+import { DomSerializerService } from "../../../main/services/abstract/domoperatorinternalservices/DomSerializer.service";
+import { DomSerializerServiceImpl } from "../../../main/services/implementation/domoperatorintenalservices/DomSerializer.serviceimpl";
+import { DomAttributeValue } from "../../../main/util/DomAttributeValue.class";
+import { DomObject } from "../../../main/util/DomObject.class";
+import { DomTree } from "../../../main/util/DomTree.class";
+
 
 describe("DomSerializerService tests", () => {
     it("Should example domTree be serialized properly", () => {
