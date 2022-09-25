@@ -1,3 +1,5 @@
+import { DefualtUseCaseResponse } from "../../../../base/DefaultUseCaseResponse.class";
+import { UseCaseResponseWrapper } from "../../../../base/UseCaseResponseWrapper.interface";
 import { AsyncWebWorkerService } from "../../../../services/abstract/AsyncWebWorker.service";
 import { DomOperatorService } from "../../../../services/abstract/DomOperator.service";
 import { DomCreatorService } from "../../../../services/abstract/domoperatorinternalservices/DomCreator.service";
@@ -21,7 +23,7 @@ export class ConvertedSvCreateAsyncUseCaseImpl implements ConvertedSvgCreateAsyn
         this._domOperator = domOperator;
     }
 
-    public async execute(id: number): Promise<ConvertedSvg> {
+    public async execute(id: number): Promise<UseCaseResponseWrapper<ConvertedSvg>> {
         const asyncWebWorkerOperation = async () => {
             try {
                 const singleSvg = await this._convertedSvgRepository.fetchSvg(id);
@@ -50,14 +52,15 @@ export class ConvertedSvCreateAsyncUseCaseImpl implements ConvertedSvgCreateAsyn
                 "\n" +
                 `\nexport default ${fistUpperCaseName};`;
 
-                return new ConvertedSvg(id, singleSvg.data.name, output);
+                return new DefualtUseCaseResponse(new ConvertedSvg(id, singleSvg.data.name, output), false, "");
             } catch(e) {
                 console.error(e);
-                return new ConvertedSvg(0, "", "");
+                // TODO: Need global service that will hanle all errors, preety parse them etc. It should be generic and have great abstraction.
+                return new DefualtUseCaseResponse(new ConvertedSvg(0, "", ""), true, <string>e);
             }
         };
         const convertedSvg = this._asyncWebWorkerService
-            .startWebWorker<ConvertedSvg>(asyncWebWorkerOperation);
+            .startWebWorker<UseCaseResponseWrapper<ConvertedSvg>>(asyncWebWorkerOperation);
         return convertedSvg;
     }
 

@@ -2,6 +2,11 @@ import { SvgDto } from "../../../main/clean/data/dto/Svg.dto";
 import { ConvertedSvgRepository } from "../../../main/clean/data/repository/abstract/ConvertedSvg.repository";
 
 export class DummyConvertedSvgRepository implements ConvertedSvgRepository {
+    /**
+     * 
+     * @param id 
+     * @returns 
+     */
     public async fetchSvg(id: number): Promise<SvgDto> {
         const res: SvgDto = {
             data: {
