@@ -67,3 +67,5 @@ export class RNDomManipulatorServiceImpl implements RNDomManipulatorService {
         return convertedDomObjectAttributes;
     }
 }
+
+export const rnDomManipulatorServiceImpl: RNDomManipulatorService = new RNDomManipulatorServiceImpl();

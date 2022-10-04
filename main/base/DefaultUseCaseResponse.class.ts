@@ -1,20 +1,20 @@
 import { UseCaseResponseWrapper } from "./UseCaseResponseWrapper.interface";
 
-export class DefualtUseCaseResponse<T> implements UseCaseResponseWrapper<T> {
+export class DefaultUseCaseResponse<T> implements UseCaseResponseWrapper<T> {
     private _entity: T;
     private _isError: boolean;
-    private _errorMessage: string;
+    private _message: string;
 
-    constructor(entity: T, isError: boolean, errorMessage: string) {
+    constructor(entity: T, isError: boolean, message: string) {
         this._entity = entity;
         this._isError = isError;
-        this._errorMessage = errorMessage;
+        this._message = message;
     }
 
-    get entiy(): T {
+    get entity(): T {
         return this._entity;
     }
-    set entiy(entity: T) {
+    set entity(entity: T) {
         this._entity = entity;
     }
     get isError(): boolean {
@@ -23,11 +23,11 @@ export class DefualtUseCaseResponse<T> implements UseCaseResponseWrapper<T> {
     set isError(isError: boolean) {
         this._isError = isError;
     }
-    get errorMessage(): string {
-        return this._errorMessage;
+    get message(): string {
+        return this._message;
     }
-    set errorMessage(errorMessage: string) {
-        this._errorMessage = errorMessage;
+    set message(message: string) {
+        this._message = message;
     }
 
 }

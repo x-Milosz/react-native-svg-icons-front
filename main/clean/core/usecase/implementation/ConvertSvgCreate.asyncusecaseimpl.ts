@@ -1,8 +1,9 @@
-import { DefualtUseCaseResponse } from "../../../../base/DefaultUseCaseResponse.class";
+import { DefaultUseCaseResponse } from "../../../../base/DefaultUseCaseResponse.class";
 import { UseCaseResponseWrapper } from "../../../../base/UseCaseResponseWrapper.interface";
 import { AsyncWebWorkerService } from "../../../../services/abstract/AsyncWebWorker.service";
 import { DomOperatorService } from "../../../../services/abstract/DomOperator.service";
 import { DomCreatorService } from "../../../../services/abstract/domoperatorinternalservices/DomCreator.service";
+import { ResponseHandlerService } from "../../../../services/abstract/ResponseHandler.serivice";
 import { RNDomManipulatorService } from "../../../../services/abstract/RNDomManipulator.service";
 import { ConvertedSvgRepository } from "../../../data/repository/abstract/ConvertedSvg.repository";
 import { ConvertedSvg } from "../../entity/ConvertedSvg.entity";
@@ -13,14 +14,16 @@ export class ConvertedSvCreateAsyncUseCaseImpl implements ConvertedSvgCreateAsyn
     private _asyncWebWorkerService: AsyncWebWorkerService;
     private _domOperator: DomOperatorService;
     private _rnDomManipulatorService: RNDomManipulatorService;
+    private _responseHandlerService: ResponseHandlerService;
 
     constructor(convertedSvgRepository: ConvertedSvgRepository, 
         asyncWebWorkerService: AsyncWebWorkerService, domOperator: DomOperatorService,
-        rnDomManipulatorService: RNDomManipulatorService) {
+        rnDomManipulatorService: RNDomManipulatorService, responseHandlerService: ResponseHandlerService) {
         this._convertedSvgRepository = convertedSvgRepository;
         this._asyncWebWorkerService = asyncWebWorkerService;
         this._rnDomManipulatorService = rnDomManipulatorService;
         this._domOperator = domOperator;
+        this._responseHandlerService = responseHandlerService;
     }
 
     public async execute(id: number): Promise<UseCaseResponseWrapper<ConvertedSvg>> {
@@ -52,11 +55,11 @@ export class ConvertedSvCreateAsyncUseCaseImpl implements ConvertedSvgCreateAsyn
                 "\n" +
                 `\nexport default ${fistUpperCaseName};`;
 
-                return new DefualtUseCaseResponse(new ConvertedSvg(id, singleSvg.data.name, output), false, "");
+                return this._responseHandlerService
+                    .handleResponse(new ConvertedSvg(id, singleSvg.data.name, output), "convert_svg_create.success");
             } catch(e) {
-                console.error(e);
-                // TODO: Need global service that will hanle all errors, preety parse them etc. It should be generic and have great abstraction.
-                return new DefualtUseCaseResponse(new ConvertedSvg(0, "", ""), true, <string>e);
+                return this._responseHandlerService
+                    .handleError(e, new ConvertedSvg(0, "", ""), "ConvertedSvCreateAsyncUseCaseImpl::execute");
             }
         };
         const convertedSvg = this._asyncWebWorkerService
