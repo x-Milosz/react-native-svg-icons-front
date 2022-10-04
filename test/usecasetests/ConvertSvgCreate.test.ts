@@ -1,3 +1,4 @@
+import { ResponseHandlerServiceImpl } from "./../../main/services/implementation/ResponseHandler.serviceimpl";
 /* eslint-disable max-len */
 import { DomSerializerServiceImpl } from "../../main/services/implementation/domoperatorintenalservices/DomSerializer.serviceimpl";
 import { RNDomManipulatorServiceImpl } from "./../../main/services/implementation/RNDomManipulator.serviceimpl";
@@ -14,11 +15,11 @@ describe("ConvertSvgCreate tests", () => {
     it("ConvertSvgCreate default transition", async () => {
         const convertedSvgCreate: ConvertedSvgCreateAsyncUseCase
              = new ConvertedSvCreateAsyncUseCaseImpl(new DummyConvertedSvgRepository(), 
-             new DummyAsyncWebWorkerServiceImpl(), 
-             new DomOperatorServiceImpl(new DomCreatorServiceImpl(), new DomSerializerServiceImpl()), 
-             new RNDomManipulatorServiceImpl());
+                 new DummyAsyncWebWorkerServiceImpl(), 
+                 new DomOperatorServiceImpl(new DomCreatorServiceImpl(), new DomSerializerServiceImpl()), 
+                 new RNDomManipulatorServiceImpl(), new ResponseHandlerServiceImpl());
         const response = await convertedSvgCreate.execute(1);
-        expect(response.entiy.svg).toEqual(
+        expect(response.entity.svg).toEqual(
             "import * as React from \"react\";" +
             "\nimport { View } from \"react-native\";" +
             "\nimport Svg, { Path, Color }  from \"react-native-svg\";" +
@@ -44,9 +45,9 @@ describe("ConvertSvgCreate tests", () => {
             = new ConvertedSvCreateAsyncUseCaseImpl(new DummyConvertedSvgRepository(), 
                 new DummyAsyncWebWorkerServiceImpl(), 
                 new DomOperatorServiceImpl(new DomCreatorServiceImpl(), new DomSerializerServiceImpl()), 
-                new RNDomManipulatorServiceImpl());
+                new RNDomManipulatorServiceImpl(), new ResponseHandlerServiceImpl());
         const response = await convertedSvgCreate.execute(2137);
-        expect(response.entiy.svg).toEqual(
+        expect(response.entity.svg).toEqual(
             "import * as React from \"react\";" +
             "\nimport { View } from \"react-native\";" +
             "\nimport Svg, { Path, Color }  from \"react-native-svg\";" +
@@ -65,5 +66,5 @@ describe("ConvertSvgCreate tests", () => {
             "\n" +
             "\nexport default Account;"
         );
-    })
+    });
 });

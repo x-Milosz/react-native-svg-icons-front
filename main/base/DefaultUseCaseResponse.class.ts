@@ -1,6 +1,6 @@
 import { UseCaseResponseWrapper } from "./UseCaseResponseWrapper.interface";
 
-export class DefualtUseCaseResponse<T> implements UseCaseResponseWrapper<T> {
+export class DefaultUseCaseResponse<T> implements UseCaseResponseWrapper<T> {
     private _entity: T;
     private _isError: boolean;
     private _message: string;
@@ -11,10 +11,10 @@ export class DefualtUseCaseResponse<T> implements UseCaseResponseWrapper<T> {
         this._message = message;
     }
 
-    get entiy(): T {
+    get entity(): T {
         return this._entity;
     }
-    set entiy(entity: T) {
+    set entity(entity: T) {
         this._entity = entity;
     }
     get isError(): boolean {
