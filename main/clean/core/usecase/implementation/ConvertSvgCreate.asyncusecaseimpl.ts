@@ -62,7 +62,7 @@ export class ConvertedSvCreateAsyncUseCaseImpl implements ConvertedSvgCreateAsyn
                     .handleError(e, new ConvertedSvg(0, "", ""), "ConvertedSvCreateAsyncUseCaseImpl::execute");
             }
         };
-        const convertedSvg = this._asyncWebWorkerService
+        const convertedSvg = await this._asyncWebWorkerService
             .startWebWorker<UseCaseResponseWrapper<ConvertedSvg>>(asyncWebWorkerOperation);
         return convertedSvg;
     }
