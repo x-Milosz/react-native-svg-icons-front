@@ -30,7 +30,7 @@ const svgSlice = createSlice({
         [HYDRATE]: (state, action) => {
             return {
                 ...state,
-                ...action.payload.svg,
+                ...action.payload
             };
         },
     },

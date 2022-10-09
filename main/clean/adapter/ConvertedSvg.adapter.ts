@@ -1,6 +1,9 @@
 import { ConvertedSvgFactory } from "../../di/ConvertedSvg.factory";
+import { AlertThunks } from "../../reducer/alert/alert.thunks";
 import { AppThunk } from "../../reducer/store";
 import { SvgThunks } from "../../reducer/svg/svg.thunks";
+import { v4 as uuid } from "uuid";
+
 
 export class ConvertedSvgAdapter {
     private _convertedSvgFactory: ConvertedSvgFactory;
@@ -12,12 +15,17 @@ export class ConvertedSvgAdapter {
     public convertSvg = (svgId: number): AppThunk<Promise<boolean>> => async dispatch => {
         try {
             const convertSvgUseCase = this._convertedSvgFactory.getConvertedSvgCreateUseCase();
-            const convetedSvg = await convertSvgUseCase.execute(svgId);
-            dispatch(SvgThunks.setConvertedSvgThunk(convetedSvg.entity));
+            const convertedSvg = await convertSvgUseCase.execute(svgId);
+
+            if(convertedSvg.isError) {
+                dispatch(AlertThunks.addAlertThunk({uuid: uuid(), message: convertedSvg.message, type: "error"}));
+            }
+
+            dispatch(SvgThunks.setConvertedSvgThunk(convertedSvg.entity));
             return true;
         } catch(e) {
-            console.error(e);
+            console.error("ConvertedSvgAdapter::convertSvg: ", e);
             return false;
         }
-    }
+    };
 }

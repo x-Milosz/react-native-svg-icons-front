@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { HYDRATE } from "next-redux-wrapper";
-import { AlertsT } from "./alert.types";
+import { AlertsT, AlertT } from "./alert.types";
 
 interface AlertStateI {
     alerts: AlertsT;
@@ -8,17 +8,17 @@ interface AlertStateI {
 
 const initialState: AlertStateI = {
     alerts: [],
-}
+};
 
 const alertSlice = createSlice({
     name: "alert",
     initialState,
     reducers: {
-        addAlert: (state, action: PayloadAction<AlertsT[0]>) => {
+        addAlert: (state, action: PayloadAction<AlertT>) => {
             state.alerts.push(action.payload);
         },
-        removeAlert: (state, action: PayloadAction<AlertsT[0]["id"]>) => {
-            state.alerts = state.alerts.filter(it => it.id !== action.payload);
+        removeAlert: (state, action: PayloadAction<AlertT["uuid"]>) => {
+            state.alerts = state.alerts.filter(it => it.uuid !== action.payload);
         },
         removeAllAlerts: (state) => {
             state.alerts = [];
@@ -28,7 +28,7 @@ const alertSlice = createSlice({
         [HYDRATE]: (state, action) => {
             return {
                 ...state,
-                ...action.payload.svg,
+                ...action.payload
             };
         },
     }

@@ -1,7 +1,8 @@
-export type AlertsT = AlertsI[];
+export type AlertsT = AlertT[];
+export type AlertT = AlertsI;
 
 interface AlertsI {
-    id: number;
+    uuid: string;
     message: string;
     type: "error" | "info";
 }

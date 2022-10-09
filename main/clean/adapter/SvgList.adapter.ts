@@ -1,6 +1,9 @@
 import { AppThunk } from "../../reducer/store";
 import { SvgThunks } from "../../reducer/svg/svg.thunks";
 import { SvgListFactory } from "../../di/SvgList.factory";
+import { AlertThunks } from "../../reducer/alert/alert.thunks";
+import { v4 as uuid } from "uuid";
+
 
 class SvgListAdapter {
     private _svgListFactory: SvgListFactory;
@@ -14,6 +17,11 @@ class SvgListAdapter {
         try {
             const fetchListUseCase = this._svgListFactory.getSvgListFetchPageUseCase();
             const svgList = await fetchListUseCase.execute(page, pageSize, search);
+
+            if(svgList.isError) {
+                dispatch(AlertThunks.addAlertThunk({uuid: uuid(), message: svgList.message, type: "error"}));
+            }
+
             dispatch(SvgThunks.setSvgListThunk(svgList.entity));
             return true;
         } catch(e) {
