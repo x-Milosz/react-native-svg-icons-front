@@ -9,11 +9,9 @@
 
 .main {
   min-height: 84.3vh;
-  flex: 1;
+  width: 100%;
+
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .footer {
@@ -87,4 +85,19 @@
   font-size: 2.5em;
   font-family: "Lobster";
   margin-left: 0.5em;
+}
+
+.fistMainContainer {
+  width: 50%;
+  border-right: solid 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.secondMainContainer {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

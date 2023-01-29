@@ -17,6 +17,7 @@ const pl: typeof en = {
         aboutProjectButtonText: "O PROJEKCIE",
         contribute: "KONTRYBUCJE",
         ribbonText: "•  ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER",
+        searchInputPlaceholder: "Kliknij i wyszukaj swoją ikonę..."
     }
 };
 

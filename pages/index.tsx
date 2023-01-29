@@ -1,9 +1,10 @@
 import React from "react";
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import useGetStrings from "../front/hooks/useGetStrings.hook";
 import Link from "next/link";
+import IconSelector from "../front/components/ui/IconSelector";
 
 const Home: NextPage = () => {
     const strings = useGetStrings("mainPage");
@@ -50,11 +51,21 @@ const Home: NextPage = () => {
                 </div>
             </header>
             <main className={styles.main}>
+                <div className={styles.fistMainContainer}>
+                    <IconSelector />
+                </div>
+                <div className={styles.secondMainContainer}></div>
             </main>
             <footer className={styles.footer}>
             </footer>
         </div>
     );
+};
+
+export const getStaticProps: GetStaticProps = async (context) => {
+    return {
+        props: {}
+    };
 };
 
 export default Home;
