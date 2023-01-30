@@ -11,8 +11,17 @@ interface SvgStateI {
 }
 
 const initialState: SvgStateI = {
-    svgList: new SvgList(0, 0, 0, []),
-    convertedSvg: new ConvertedSvg(0, "", ""),
+    svgList: {
+        page: 0,
+        pages: 0,
+        total: 0,
+        contentList: [],
+    },
+    convertedSvg: {
+        id: 0,
+        name: "",
+        svg: "",
+    },
 };
 
 const svgSlice = createSlice({

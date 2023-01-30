@@ -56,10 +56,10 @@ export class ConvertedSvCreateAsyncUseCaseImpl implements ConvertedSvgCreateAsyn
                 `\nexport default ${fistUpperCaseName};`;
 
                 return this._responseHandlerService
-                    .handleResponse(new ConvertedSvg(id, singleSvg.data.name, output), "convert_svg_create.success");
+                    .handleResponse({id: id, name: singleSvg.data.name, svg: output}, "convert_svg_create.success");
             } catch(e) {
                 return this._responseHandlerService
-                    .handleError(e, new ConvertedSvg(0, "", ""), "ConvertedSvCreateAsyncUseCaseImpl::execute");
+                    .handleError(e, {id: 0, name: "", svg: ""}, "ConvertedSvCreateAsyncUseCaseImpl::execute");
             }
         };
         const convertedSvg = await this._asyncWebWorkerService
