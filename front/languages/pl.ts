@@ -18,6 +18,9 @@ const pl: typeof en = {
         contribute: "KONTRYBUCJE",
         ribbonText: "•  ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER",
         searchInputPlaceholder: "Kliknij i wyszukaj swoją ikonę..."
+    },
+    "paginationOperator": {
+        of: " z "
     }
 };
 

@@ -28,7 +28,7 @@ const Home: NextPage<HomeI> = ({initialSvgList}: HomeI) => {
     // }, [initialSvgList]);
 
     useEffect(() => {
-        dispatch(svgListAdapter.fetchSvgList(1, 49));
+        dispatch(svgListAdapter.fetchSvgList());
     }, []);
 
     return (

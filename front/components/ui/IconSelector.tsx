@@ -1,19 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../../styles/components/ui/IconSelector.module.css";
 import * as MaterialDesign from "react-icons/md";
 import useGetStrings from "../../hooks/useGetStrings.hook";
+import { useAppDispatch, useAppSelector } from "../../../main/reducer/hook";
+import parse from "html-react-parser";
+import PaginationOperator from "./PaginationOperator";
+import { svgListAdapter } from "../../../main/clean/adapter/SvgList.adapter";
+
 
 const IconSelector = () => {
+    const dispatch = useAppDispatch();
     const strings = useGetStrings("mainPage");
+    const icons = useAppSelector(state => state.svg.svgList);
+
+    const [inputText, setInputText] = useState("");
+
+    useEffect(() => {
+        dispatch(svgListAdapter.searchSvgAndFetch(inputText));
+    }, [inputText]);
 
     return (
         <div className={styles.iconSelectorContainer}>
             <div className={styles.searchContainer}>
                 <MaterialDesign.MdSearch size={40} />
-                <input  className={styles.searchInput} placeholder={strings["searchInputPlaceholder"]} />
+                <input
+                    value={inputText}
+                    onChange={(val) => {
+                        setInputText(val.target.value);
+                    }}
+                    type="text" 
+                    className={styles.searchInput} 
+                    placeholder={strings["searchInputPlaceholder"]} />
+                <PaginationOperator page={icons.page} totalPages={icons.pages} 
+                    newPageFunc={async (newPage: number) => {
+                        await dispatch(svgListAdapter.changeSvgListParamAndFetch("page", newPage));
+                    }} 
+                />
             </div>
             <div className={styles.innerIconSelectorContainer}>
-                
+                {icons.contentList.map(it => (
+                    <div key={it.id} className={styles.innerIconSelectorContainerItem}>
+                        <>{parse(it.svg)}</>
+                        <p>{it.name}</p>
+                    </div>
+                ))}
             </div>
         </div>
     );

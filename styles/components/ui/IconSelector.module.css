@@ -14,7 +14,7 @@
 }
 
 .searchInput {
-  width: 100%;
+  width: 85%;
   background-color: transparent;
   border: none;
   color: black;
@@ -22,10 +22,41 @@
   margin-bottom: auto;
   margin-top: auto;
   font-size: 20px;
+  padding-bottom: 5px;
 }
 
 .innerIconSelectorContainer {
   width: 100%;
   height: 95%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.innerIconSelectorContainerItem {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  cursor: pointer;
+}
+
+.innerIconSelectorContainerItem:hover {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.innerIconSelectorContainerItem > svg {
+  width: 30px;
+  height: 30px;
+}
+
+.innerIconSelectorContainerItem > p {
+  font-size: 0.7em;
+  margin-top: 5px;
+  text-align: center;
+  user-select: none;
 }

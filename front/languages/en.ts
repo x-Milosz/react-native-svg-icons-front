@@ -16,6 +16,9 @@ const en = {
         contribute: "CONTRIBUTE",
         ribbonText: "•  ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER",
         searchInputPlaceholder: "Click and search for your icon..."
+    },
+    "paginationOperator": {
+        of: " of ",
     }
 };
 

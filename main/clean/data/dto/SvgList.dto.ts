@@ -13,4 +13,5 @@ export interface SvgListDataDtoI {
 export interface SvgListDataContentListDtoI {
     id:   number;
     name: string;
+    svg: string;
 }

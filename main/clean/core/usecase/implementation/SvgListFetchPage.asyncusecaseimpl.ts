@@ -2,7 +2,6 @@ import { SvgList } from "../../entity/SvgList.entity";
 import { SvgListRepository } from "../../../data/repository/abstract/SvgList.repository";
 import { SvgListFetchPageAsyncUseCase } from "../abstract/SvgListFetchPage.asyncusecase";
 import { UseCaseResponseWrapper } from "../../../../base/UseCaseResponseWrapper.interface";
-import { DefaultUseCaseResponse } from "../../../../base/DefaultUseCaseResponse.class";
 import { ResponseHandlerService } from "../../../../services/abstract/ResponseHandler.serivice";
 
 export class SvgListFetchPageUseCaseImpl implements SvgListFetchPageAsyncUseCase {
