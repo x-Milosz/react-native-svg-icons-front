@@ -4,7 +4,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import useGetStrings from "../front/hooks/useGetStrings.hook";
 import Link from "next/link";
-import IconSelector from "../front/components/ui/IconSelector";
+import IconSelector from "../front/components/page/IconSelector";
 import { useEffect } from "react";
 import { useAppDispatch } from "../main/reducer/hook";
 import { setSvgList } from "../main/reducer/svg/svg.slice";

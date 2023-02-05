@@ -5,7 +5,7 @@ import { SvgThunks } from "../../reducer/svg/svg.thunks";
 import { v4 as uuid } from "uuid";
 
 
-export class ConvertedSvgAdapter {
+class ConvertedSvgAdapter {
     private _convertedSvgFactory: ConvertedSvgFactory;
 
     constructor(convertedSvgFactory: ConvertedSvgFactory) {
@@ -29,3 +29,5 @@ export class ConvertedSvgAdapter {
         }
     };
 }
+
+export const convertedSvgAdapter = new ConvertedSvgAdapter(new ConvertedSvgFactory());

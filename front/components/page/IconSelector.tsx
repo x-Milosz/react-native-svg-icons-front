@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styles from "../../../styles/components/ui/IconSelector.module.css";
 import * as MaterialDesign from "react-icons/md";
 import useGetStrings from "../../hooks/useGetStrings.hook";
 import { useAppDispatch, useAppSelector } from "../../../main/reducer/hook";
 import parse from "html-react-parser";
-import PaginationOperator from "./PaginationOperator";
+import PaginationOperator from "../ui/PaginationOperator";
 import { svgListAdapter } from "../../../main/clean/adapter/SvgList.adapter";
+import { convertedSvgAdapter } from "../../../main/clean/adapter/ConvertedSvg.adapter";
 
 
 const IconSelector = () => {
@@ -18,6 +19,10 @@ const IconSelector = () => {
     useEffect(() => {
         dispatch(svgListAdapter.searchSvgAndFetch(inputText));
     }, [inputText]);
+
+    const convertSvgCallback = useCallback((svgId: number) => {
+        dispatch(convertedSvgAdapter.convertSvg(svgId));
+    }, []);
 
     return (
         <div className={styles.iconSelectorContainer}>
@@ -39,7 +44,13 @@ const IconSelector = () => {
             </div>
             <div className={styles.innerIconSelectorContainer}>
                 {icons.contentList.map(it => (
-                    <div key={it.id} className={styles.innerIconSelectorContainerItem}>
+                    <div 
+                        key={it.id} 
+                        className={styles.innerIconSelectorContainerItem}
+                        onClick={() => {
+                            convertSvgCallback(it.id);
+                        }}
+                    >
                         <>{parse(it.svg)}</>
                         <p>{it.name}</p>
                     </div>
