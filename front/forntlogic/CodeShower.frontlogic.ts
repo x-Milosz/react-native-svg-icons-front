@@ -6,7 +6,7 @@ export namespace CodeShowFrontLogic {
 
         const result: ParseCodeResultT = [];
 
-        for(let i = 1; i < lines.length || i < 100; i++) {
+        for(let i = 1; i < lines.length + 1; i++) {
             if(i < lines.length) {
                 result.push({
                     codeLine: i,

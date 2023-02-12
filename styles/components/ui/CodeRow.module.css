@@ -1,0 +1,11 @@
+.row {
+  line-height: 21px;
+}
+
+.numberRowPart {
+  text-align: center;
+  display: flex;
+  justify-content: start;
+  user-select: none;
+  color: gray;
+}

@@ -1,4 +1,6 @@
 import React from "react";
+import styles from "../../../../styles/components/ui/CodeRow.module.css";
+
 
 interface CodeRowI {
     codeLine: number;
@@ -7,8 +9,8 @@ interface CodeRowI {
 
 const CodeRow = ({codeLine, codeLineContent}: CodeRowI) => {
     return (
-        <tr>
-            <td>{codeLine}</td>
+        <tr className={styles.row}>
+            <td className={styles.numberRowPart}>{codeLine}</td>
             <td>{codeLineContent}</td>
         </tr>
     );

@@ -15,6 +15,7 @@ import { SvgList } from "../main/clean/core/entity/SvgList.entity";
 import { svgListAdapter } from "../main/clean/adapter/SvgList.adapter";
 import localFont from "@next/font/local";
 import { useRouter } from "next/router";
+import CodeSection from "../front/components/page/CodeSection";
 
 
 interface HomeI {
@@ -75,7 +76,9 @@ const Home: NextPage<HomeI> = ({initialSvgList}: HomeI) => {
                 <div className={styles.fistMainContainer}>
                     <IconSelector />
                 </div>
-                <div className={styles.secondMainContainer}></div>
+                <div className={styles.secondMainContainer}>
+                    <CodeSection />
+                </div>
             </main>
             <footer className={styles.footer}>
             </footer>
@@ -83,13 +86,13 @@ const Home: NextPage<HomeI> = ({initialSvgList}: HomeI) => {
     );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
-    const svgListRepository: SvgListRepository = new SvgListRepositoryImpl();
-    const initialPage = await svgListRepository.fetchSvgPage(1, 49)
-    ;
-    return {
-        props: {initialSvgList: initialPage}
-    };
-};
+// export const getStaticProps: GetStaticProps = async (context) => {
+//     const svgListRepository: SvgListRepository = new SvgListRepositoryImpl();
+//     const initialPage = await svgListRepository.fetchSvgPage(1, 49)
+//     ;
+//     return {
+//         props: {initialSvgList: initialPage}
+//     };
+// };
 
 export default Home;

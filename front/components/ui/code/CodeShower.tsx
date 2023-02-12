@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { CodeShowFrontLogic } from "../../../forntlogic/CodeShower.frontlogic";
-import styles from "../../../styles/components/ui/CodeShower.module.css";
+import styles from "../../../../styles/components/ui/CodeShower.module.css";
 import CodeRow from "./CodeRow";
 
 

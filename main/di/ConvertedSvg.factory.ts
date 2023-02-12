@@ -1,6 +1,5 @@
 import { rnDomManipulatorServiceImpl } from "./../services/implementation/RNDomManipulator.serviceimpl";
 import { domOperatorServiceImpl } from "./../services/implementation/DomOperator.serviceimpl";
-import { asyncWebWorkerServiceImpl } from "./../services/implementation/AsyncWebWorker.serviceimpl";
 import { responseHandlerServiceImpl, ResponseHandlerServiceImpl } from "./../services/implementation/ResponseHandler.serviceimpl";
 import { ConvertedSvgRepositoryImpl } from "./../clean/data/repository/implementation/ConvertedSvg.repositoryimpl";
 import { ConvertedSvgRepository } from "../clean/data/repository/abstract/ConvertedSvg.repository";
@@ -11,7 +10,7 @@ export class ConvertedSvgFactory {
     private _convertedSvgRepository: ConvertedSvgRepository = new ConvertedSvgRepositoryImpl();
 
     public getConvertedSvgCreateUseCase(): ConvertedSvgCreateAsyncUseCase {
-        return new ConvertedSvCreateAsyncUseCaseImpl(this._convertedSvgRepository, asyncWebWorkerServiceImpl, 
+        return new ConvertedSvCreateAsyncUseCaseImpl(this._convertedSvgRepository, 
             domOperatorServiceImpl, rnDomManipulatorServiceImpl, responseHandlerServiceImpl);
     }
 }
