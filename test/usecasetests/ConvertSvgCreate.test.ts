@@ -6,7 +6,6 @@ import { ConvertedSvgCreateAsyncUseCase } from
     "../../main/clean/core/usecase/abstract/ConvertedSvgCreate.asyncusecase";
 import { ConvertedSvCreateAsyncUseCaseImpl } from 
     "../../main/clean/core/usecase/implementation/ConvertSvgCreate.asyncusecaseimpl";
-import { DummyAsyncWebWorkerServiceImpl } from "../data/dummyasyncwebworkers/DummyAsyncWebWorker.serviceimpl";
 import { DummyConvertedSvgRepository } from "../data/dummyrepositories/DummyConvertedSvg.repository";
 import { DomOperatorServiceImpl } from "../../main/services/implementation/DomOperator.serviceimpl";
 import { DomCreatorServiceImpl } from "../../main/services/implementation/domoperatorintenalservices/DomCreator.serviceimpl";
@@ -14,8 +13,7 @@ import { DomCreatorServiceImpl } from "../../main/services/implementation/domope
 describe("ConvertSvgCreate tests", () => {
     it("ConvertSvgCreate default transition", async () => {
         const convertedSvgCreate: ConvertedSvgCreateAsyncUseCase
-             = new ConvertedSvCreateAsyncUseCaseImpl(new DummyConvertedSvgRepository(), 
-                 new DummyAsyncWebWorkerServiceImpl(), 
+             = new ConvertedSvCreateAsyncUseCaseImpl(new DummyConvertedSvgRepository(),  
                  new DomOperatorServiceImpl(new DomCreatorServiceImpl(), new DomSerializerServiceImpl()), 
                  new RNDomManipulatorServiceImpl(), new ResponseHandlerServiceImpl());
         const response = await convertedSvgCreate.execute(1);
@@ -43,7 +41,6 @@ describe("ConvertSvgCreate tests", () => {
     it("ConvertSvgCreate should return error wheen picked not existing svg", async () => {
         const convertedSvgCreate: ConvertedSvgCreateAsyncUseCase
             = new ConvertedSvCreateAsyncUseCaseImpl(new DummyConvertedSvgRepository(), 
-                new DummyAsyncWebWorkerServiceImpl(), 
                 new DomOperatorServiceImpl(new DomCreatorServiceImpl(), new DomSerializerServiceImpl()), 
                 new RNDomManipulatorServiceImpl(), new ResponseHandlerServiceImpl());
         const response = await convertedSvgCreate.execute(2137);
