@@ -26,11 +26,8 @@ export class ConvertedSvCreateAsyncUseCaseImpl implements ConvertedSvgCreateAsyn
     public async execute(id: number): Promise<UseCaseResponseWrapper<ConvertedSvg>> {
         try {
             const singleSvg = await this._convertedSvgRepository.fetchSvg(id);
-                
-            const firstUpperCaseNameChars = [...singleSvg.data.name];
-            firstUpperCaseNameChars[0] = firstUpperCaseNameChars[0].toUpperCase();
-            const fistUpperCaseName = firstUpperCaseNameChars.join("");
-                
+            const fistUpperCaseName = this.createProperName(singleSvg.data.name);   
+            
             const svgLines: SvgLines = [];
             svgLines.push({text: "import * as React from \"react\";", tabs: 0});
             svgLines.push({text: "import { View } from \"react-native\";", tabs: 0});
@@ -64,5 +61,24 @@ export class ConvertedSvCreateAsyncUseCaseImpl implements ConvertedSvgCreateAsyn
         return this._domOperator.serializeDomTree(rnDomTree);
     }
     
+    private createProperName(svgName: string): string {
+        if(svgName.length < 1) {
+            return "";
+        }
 
+
+        let newStrList = [...svgName];
+
+        newStrList[0] = newStrList[0].toUpperCase();
+        for(let i = 1; i < newStrList.length; i++) {
+            if(newStrList[i] === "-") {
+                if(i + 1 < newStrList.length) {
+                    newStrList[i + 1] = newStrList[i + 1].toUpperCase();
+                }
+            }
+        }
+        
+        newStrList = newStrList.filter(it => it !== "-");
+        return newStrList.join("");
+    }
 }
