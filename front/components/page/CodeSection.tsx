@@ -9,7 +9,7 @@ const CodeSection = () => {
 
     return (
         <div className={styles.wrapper}>
-            <CodeShower code={convertedSvg.svg} />
+            <CodeShower svgLines={convertedSvg.svgLines} />
         </div>
     );
 };

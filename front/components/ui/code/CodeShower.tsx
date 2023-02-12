@@ -2,22 +2,24 @@ import React, { useMemo } from "react";
 import { CodeShowFrontLogic } from "../../../forntlogic/CodeShower.frontlogic";
 import styles from "../../../../styles/components/ui/CodeShower.module.css";
 import CodeRow from "./CodeRow";
+import { SvgLines } from "../../../../main/clean/core/entity/ConvertedSvg.entity";
 
 
 interface CodeShowerI {
-    code: string;
+    svgLines: SvgLines;
 }
 
-const CodeShower = ({code}: CodeShowerI) => {
+const CodeShower = ({svgLines}: CodeShowerI) => {
     
+    // TODO: make code be parsed in ConvertSvgCreate.asyncusecaseimpl.ts
     const parsedCode = useMemo(() => {
-        return CodeShowFrontLogic.parseCode(code);
-    }, [code]);
+        return CodeShowFrontLogic.parseCode(svgLines);
+    }, [svgLines]);
     
     return (
         <table className={styles.table}>
             {parsedCode.map(it => (
-                <CodeRow codeLine={it.codeLine} codeLineContent={it.codeLineContent} key={it.codeLine} />
+                <CodeRow codeLine={it.codeLine} codeLineContent={it.codeLineContent} key={it.codeLine} tabs={it.tabs} />
             ))}
         </table>
     );

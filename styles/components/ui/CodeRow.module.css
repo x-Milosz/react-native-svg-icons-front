@@ -5,7 +5,7 @@
 .numberRowPart {
   text-align: center;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   user-select: none;
   color: gray;
 }

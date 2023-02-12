@@ -1,3 +1,4 @@
+import { SvgLines } from "./../../entity/ConvertedSvg.entity";
 import { DefaultUseCaseResponse } from "../../../../base/DefaultUseCaseResponse.class";
 import { UseCaseResponseWrapper } from "../../../../base/UseCaseResponseWrapper.interface";
 import { DomOperatorService } from "../../../../services/abstract/DomOperator.service";
@@ -30,31 +31,30 @@ export class ConvertedSvCreateAsyncUseCaseImpl implements ConvertedSvgCreateAsyn
             firstUpperCaseNameChars[0] = firstUpperCaseNameChars[0].toUpperCase();
             const fistUpperCaseName = firstUpperCaseNameChars.join("");
                 
-            // TODO: make View by generated programmatically  
-            const output = 
-                "import * as React from \"react\";" +
-                "\nimport { View } from \"react-native\";" +
-                "\nimport Svg, { Path, Color }  from \"react-native-svg\";" +
-                "\nimport IconI from \"../../interface/Icon.interface\";" +
-                "\n" +
-                `\ninterface ${fistUpperCaseName}I {` +
-                "\n    size: number;" +
-                "\n    color: Color;" +
-                "\n}" +
-                "\n" +
-                `\nconst ${fistUpperCaseName} = ({ size, color }: ${fistUpperCaseName}I) => (` +
-                "\n    <View style={{ width: size, height: size }}>\n    " +
-                        this.parseSingleSvgAndGenerateRNSvgCode(singleSvg.data.svg) +
-                "\n    </View>" +
-                "\n;" + 
-                "\n" +
-                `\nexport default ${fistUpperCaseName};`;
+            const svgLines: SvgLines = [];
+            svgLines.push({text: "import * as React from \"react\";", tabs: 0});
+            svgLines.push({text: "import { View } from \"react-native\";", tabs: 0});
+            svgLines.push({text: "import Svg, { Path, Color }  from \"react-native-svg\";", tabs: 0});
+            svgLines.push({text: "", tabs: 0});
+            svgLines.push({text: "", tabs: 0});
+            svgLines.push({text: `interface ${fistUpperCaseName}I {`, tabs: 0});
+            svgLines.push({text: "size: number;", tabs: 1});
+            svgLines.push({text: "color: Color;", tabs: 1});
+            svgLines.push({text: "}", tabs: 0});
+            svgLines.push({text: "", tabs: 0});
+            svgLines.push({text: `const ${fistUpperCaseName} = ({ size, color }: ${fistUpperCaseName}I) => (`, tabs: 0});
+            svgLines.push({text: "<View style={{ width: size, height: size }}>", tabs: 1});
+            svgLines.push({text: this.parseSingleSvgAndGenerateRNSvgCode(singleSvg.data.svg), tabs: 2});
+            svgLines.push({text: "</View>", tabs: 1});
+            svgLines.push({text: ");", tabs: 0});
+            svgLines.push({text: "", tabs: 0});
+            svgLines.push({text: `export default ${fistUpperCaseName};`, tabs: 0}); 
 
             return this._responseHandlerService
-                .handleResponse({id: id, name: singleSvg.data.name, svg: output}, "convert_svg_create.success");
+                .handleResponse({id: id, name: singleSvg.data.name, svgLines: svgLines}, "convert_svg_create.success");
         } catch(e) {
             return this._responseHandlerService
-                .handleError(e, {id: 0, name: "", svg: ""}, "ConvertedSvCreateAsyncUseCaseImpl::execute");
+                .handleError(e, {id: 0, name: "", svgLines: []}, "ConvertedSvCreateAsyncUseCaseImpl::execute");
         }
     }
 

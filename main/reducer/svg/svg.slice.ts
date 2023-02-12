@@ -28,7 +28,7 @@ const initialState: SvgStateI = {
     convertedSvg: {
         id: 0,
         name: "",
-        svg: "",
+        svgLines: [], 
     },
     isSvgListLoading: false,
 };
