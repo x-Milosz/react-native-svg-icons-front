@@ -11,6 +11,7 @@ const en = {
     },
     "mainPage": {
         title: "React native svg icons",
+        pageTitle: "RNSI :: Home",
         homeButtonText: "HOME",
         aboutProjectButtonText: "ABOUT PROJECT",
         contribute: "CONTRIBUTE",
@@ -19,6 +20,12 @@ const en = {
     },
     "paginationOperator": {
         of: " of ",
+    },
+    "aboutProjectPage": {
+        pageTitle: "RNSI :: About project",
+    },
+    "contributionsPage": {
+        pageTitle: "RNSI :: Contributions"
     }
 };
 

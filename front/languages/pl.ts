@@ -13,6 +13,7 @@ const pl: typeof en = {
     },
     "mainPage": {
         title: "React native svg icons",
+        pageTitle: "RNSI :: Home",
         homeButtonText: "STRONA GŁÓWNA",
         aboutProjectButtonText: "O PROJEKCIE",
         contribute: "KONTRYBUCJE",
@@ -21,6 +22,12 @@ const pl: typeof en = {
     },
     "paginationOperator": {
         of: " z "
+    },
+    "aboutProjectPage": {
+        pageTitle: "RNSI :: O projekcie",
+    },
+    "contributionsPage": {
+        pageTitle: "RNSI :: Kontrybucje"
     }
 };
 
