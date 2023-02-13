@@ -12,11 +12,11 @@ const pl: typeof en = {
 
     },
     "mainPage": {
-        title: "Another react native svg parser",
+        title: "React native svg icons",
         homeButtonText: "STRONA GŁÓWNA",
         aboutProjectButtonText: "O PROJEKCIE",
         contribute: "KONTRYBUCJE",
-        ribbonText: "•  ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER",
+        ribbonText: "   •   REACT NATIVE SVG ICONS".repeat(30),
         searchInputPlaceholder: "Kliknij i wyszukaj swoją ikonę..."
     },
     "paginationOperator": {

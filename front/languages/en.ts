@@ -10,11 +10,11 @@ const en = {
 
     },
     "mainPage": {
-        title: "Another react native svg parser",
+        title: "React native svg icons",
         homeButtonText: "HOME",
         aboutProjectButtonText: "ABOUT PROJECT",
         contribute: "CONTRIBUTE",
-        ribbonText: "•  ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER  •   ANOTHER REACT NATIVE SVG PARSER",
+        ribbonText: "   •   REACT NATIVE SVG ICONS".repeat(30),
         searchInputPlaceholder: "Click and search for your icon..."
     },
     "paginationOperator": {
