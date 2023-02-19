@@ -34,7 +34,13 @@ const pl: typeof en = {
         techStackList2: "SpringBoot, Kotlin - backend, obsługa zapytań dotyczących svg",
     },
     "contributionsPage": {
-        pageTitle: "RNSI :: Kontrybucje"
+        pageTitle: "RNSI :: Kontrybucje",
+        title: "Kontrybucje",
+        text: "Jeśli chcez wspomóc projekt swoją pracą lub masz pomysł na rozwój projektu to zapraszam do stron projektu:",
+        point1: "Frontend: ",
+        point1Link: "https://github.com/x-Milosz/another-react-native-svg-parser",
+        point2: "Backend: ",
+        point2Link: "https://github.com/x-Milosz/react-native-svg-icons-server",
     }
 };
 

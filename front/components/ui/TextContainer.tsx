@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../../../styles/components/ui/TextContainer.module.css";
 
 interface TextContainerI {
-    children:  React.ReactElement[] | React.ReactElement;
+    children: React.ReactElement[] | React.ReactElement;
 }
 
 const TextContainer = ({children}: TextContainerI) => {

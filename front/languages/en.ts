@@ -33,6 +33,12 @@ const en = {
     },
     "contributionsPage": {
         pageTitle: "RNSI :: Contributions",
+        title: "Contributions",
+        text: "If you want to contribute or you have an idea how to help to develop the project please checkout these links:",
+        point1: "Frontend: ",
+        point1Link: "https://github.com/x-Milosz/another-react-native-svg-parser",
+        point2: "Backend: ",
+        point2Link: "https://github.com/x-Milosz/react-native-svg-icons-server",
     }
 };
 

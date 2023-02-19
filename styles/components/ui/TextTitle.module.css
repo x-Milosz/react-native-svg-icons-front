@@ -1,0 +1,8 @@
+.textTitle {
+  min-width: 1200px;
+  height: 300px;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

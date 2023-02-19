@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import Head from "next/head";
 import React from "react";
 import TextContainer from "../front/components/ui/TextContainer";
+import TextTitle from "../front/components/ui/TextTitle";
 import useGetStrings from "../front/hooks/useGetStrings.hook";
 import styles from "../styles/AboutProject.module.css";
 
@@ -14,9 +15,9 @@ const AboutProject: NextPage = () => {
                 <title>{strings["pageTitle"]}</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className={styles.titleContainer}>
+            <TextTitle>
                 <h1 className={styles.title}>{strings["title"]}</h1>
-            </div>
+            </TextTitle>
             <TextContainer>
                 <h2>{strings["description"]}</h2>
                 <p>{strings["text1"]}</p>
