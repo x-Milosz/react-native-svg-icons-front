@@ -1,0 +1,10 @@
+.mainWrapper {
+  max-width: 1200px;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+}
+
+.mainWrapper > h2 {
+  margin-bottom: 5px;
+}
