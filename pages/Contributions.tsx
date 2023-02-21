@@ -22,6 +22,7 @@ const Contributions: NextPage = () => {
             <TextContainer>
                 <p>{strings["text"]}</p>
                 <ul>
+                    <li>{strings["point"]}<Link href={strings["pointLink"]} style={{color: "blue"}}>{strings["pointLink"]}</Link></li>
                     <li>{strings["point1"]}<Link href={strings["point1Link"]} style={{color: "blue"}}>{strings["point1Link"]}</Link></li>
                     <li>{strings["point2"]}<Link href={strings["point2Link"]} style={{color: "blue"}}>{strings["point2Link"]}</Link></li>
                 </ul>

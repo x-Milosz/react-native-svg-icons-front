@@ -37,8 +37,10 @@ const pl: typeof en = {
         pageTitle: "RNSI :: Kontrybucje",
         title: "Kontrybucje",
         text: "Jeśli chcez wspomóc projekt swoją pracą lub masz pomysł na rozwój projektu to zapraszam do stron projektu:",
+        point: "Zbiorcze repozytorium projektu: ",
+        pointLink: "https://github.com/x-Milosz/react-native-svg-icons",
         point1: "Frontend: ",
-        point1Link: "https://github.com/x-Milosz/another-react-native-svg-parser",
+        point1Link: "https://github.com/x-Milosz/react-native-svg-icons-front",
         point2: "Backend: ",
         point2Link: "https://github.com/x-Milosz/react-native-svg-icons-server",
     }
