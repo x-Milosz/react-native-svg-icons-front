@@ -29,7 +29,7 @@ const PaginationOperator = ({page, totalPages, newPageFunc}: PaginationOperatorI
         <div className={styles.paginationOperatorWrapper}>
             <MaterialDesign.MdArrowLeft className={styles.icon} onClick={tryToFetchPreviousPage} />
             <div className={styles.pageDescriptionWrapper}>
-                <p>{page + strings["of"] + totalPages}</p>
+                {totalPages > 0 ? <p>{page + strings["of"] + totalPages}</p> : null}
             </div>
             <MaterialDesign.MdArrowRight className={styles.icon} onClick={tryToFetchNextPage} />
         </div>
