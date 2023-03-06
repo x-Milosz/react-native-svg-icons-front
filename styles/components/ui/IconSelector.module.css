@@ -1,8 +1,19 @@
-.iconSelectorContainer {
-  width: 95%;
-  height: 95%;
-  display: flex;
-  flex-direction: column;
+@media (max-width: 1372px) {
+  .iconSelectorContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1372px) {
+  .iconSelectorContainer {
+    width: 95%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .searchContainer {
@@ -33,6 +44,30 @@
   grid-template-rows: repeat(7, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+}
+
+@media (max-width: 1372px) {
+  .innerIconSelectorContainer {
+    width: 100%;
+    height: 95%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(17, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+}
+
+@media (min-width: 1372px) {
+  .innerIconSelectorContainer {
+    width: 100%;
+    height: 95%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
 }
 
 .innerIconSelectorContainerItem {

@@ -6,6 +6,7 @@ import styles from "../styles/Home.module.css";
 import useGetStrings from "../front/hooks/useGetStrings.hook";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Head from "next/head";
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -13,6 +14,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     
     return (
         <>
+            <Head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta> 
+            </Head>
             <header className={styles.header}>
                 <div className={styles.ribbon}>
                     <p className={styles.ribbonText}>{strings["ribbonText"]}</p>
