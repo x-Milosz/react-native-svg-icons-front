@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
-import styles from "../../../styles/components/ui/IconSelector.module.css";
+import styles from "../../../../styles/components/ui/IconSelector.module.css";
 import * as MaterialDesign from "react-icons/md";
 import useGetStrings from "../../hooks/useGetStrings.hook";
-import { useAppDispatch, useAppSelector } from "../../../main/reducer/hook";
 import parse from "html-react-parser";
 import PaginationOperator from "../ui/PaginationOperator";
-import { svgListAdapter } from "../../../main/clean/adapter/SvgList.adapter";
-import { convertedSvgAdapter } from "../../../main/clean/adapter/ConvertedSvg.adapter";
+import { useAppDispatch, useAppSelector } from "../../../reducer/hook";
+import { svgListAdapter } from "../../../clean/adapter/SvgList.adapter";
+import { convertedSvgAdapter } from "../../../clean/adapter/ConvertedSvg.adapter";
 
 
 const IconSelector = () => {

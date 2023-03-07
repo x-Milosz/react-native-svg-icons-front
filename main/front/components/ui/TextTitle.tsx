@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../../styles/components/ui/TextTitle.module.css";
+import styles from "../../../../styles/components/ui/TextTitle.module.css";
 
 
 interface TextTitleI {

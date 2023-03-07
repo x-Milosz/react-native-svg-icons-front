@@ -3,10 +3,10 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { wrapper } from "../main/reducer/store";
 import styles from "../styles/Home.module.css";
-import useGetStrings from "../front/hooks/useGetStrings.hook";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
+import useGetStrings from "../main/front/hooks/useGetStrings.hook";
 
 
 function MyApp({ Component, pageProps }: AppProps) {

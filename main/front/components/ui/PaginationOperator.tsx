@@ -1,6 +1,6 @@
 import React from "react";
 import * as MaterialDesign from "react-icons/md";
-import styles from "../../../styles/components/ui/PaginationOperator.module.css";
+import styles from "../../../../styles/components/ui/PaginationOperator.module.css";
 import useGetStrings from "../../hooks/useGetStrings.hook";
 
 
