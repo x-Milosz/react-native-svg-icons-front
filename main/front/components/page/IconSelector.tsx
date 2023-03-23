@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from "react";
-import styles from "../../../styles/components/ui/IconSelector.module.css";
+import styles from "../../../../styles/components/page/IconSelector.module.css";
 import * as MaterialDesign from "react-icons/md";
 import useGetStrings from "../../hooks/useGetStrings.hook";
-import { useAppDispatch, useAppSelector } from "../../../main/reducer/hook";
 import parse from "html-react-parser";
 import PaginationOperator from "../ui/PaginationOperator";
-import { svgListAdapter } from "../../../main/clean/adapter/SvgList.adapter";
-import { convertedSvgAdapter } from "../../../main/clean/adapter/ConvertedSvg.adapter";
+import { useAppDispatch, useAppSelector } from "../../../reducer/hook";
+import { svgListAdapter } from "../../../clean/adapter/SvgList.adapter";
+import { convertedSvgAdapter } from "../../../clean/adapter/ConvertedSvg.adapter";
 
 
 const IconSelector = () => {
@@ -27,15 +27,17 @@ const IconSelector = () => {
     return (
         <div className={styles.iconSelectorContainer}>
             <div className={styles.searchContainer}>
-                <MaterialDesign.MdSearch size={40} />
-                <input
-                    value={inputText}
-                    onChange={(val) => {
-                        setInputText(val.target.value);
-                    }}
-                    type="text" 
-                    className={styles.searchInput} 
-                    placeholder={strings["searchInputPlaceholder"]} />
+                <div className={styles.innerSearchContainer}>
+                    <MaterialDesign.MdSearch size={30} />
+                    <input
+                        value={inputText}
+                        onChange={(val) => {
+                            setInputText(val.target.value);
+                        }}
+                        type="text" 
+                        className={styles.searchInput} 
+                        placeholder={strings["searchInputPlaceholder"]} />
+                </div>
                 <PaginationOperator page={icons.page} totalPages={icons.pages} 
                     newPageFunc={async (newPage: number) => {
                         await dispatch(svgListAdapter.changeSvgListParamAndFetch("page", newPage));

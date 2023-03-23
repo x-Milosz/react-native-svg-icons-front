@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../../../styles/components/ui/CodeRow.module.css";
+import styles from "../../../../../styles/components/ui/CodeRow.module.css";
 
 
 interface CodeRowI {

@@ -2,14 +2,14 @@ import React from "react";
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import useGetStrings from "../front/hooks/useGetStrings.hook";
-import IconSelector from "../front/components/page/IconSelector";
 import { useEffect } from "react";
 import { useAppDispatch } from "../main/reducer/hook";
 import {SvgListDto} from "../main/clean/data/dto/SvgList.dto";
 import { svgListAdapter } from "../main/clean/adapter/SvgList.adapter";
 import { useRouter } from "next/router";
-import CodeSection from "../front/components/page/CodeSection";
+import useGetStrings from "../main/front/hooks/useGetStrings.hook";
+import IconSelector from "../main/front/components/page/IconSelector";
+import CodeSection from "../main/front/components/page/CodeSection";
 
 
 interface HomeI {

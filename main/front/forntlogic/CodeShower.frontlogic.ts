@@ -1,6 +1,6 @@
-import { SvgLines } from "./../../main/clean/core/entity/ConvertedSvg.entity";
+import { SvgLines } from "../.././../main/clean/core/entity/ConvertedSvg.entity";
 export namespace CodeShowFrontLogic {
-    export type ParseCodeResultT = {codeLine: number; codeLineContent: string, tabs: nuber}[];
+    export type ParseCodeResultT = {codeLine: number; codeLineContent: string, tabs: number}[];
 
     export const parseCode = (svgLines: SvgLines): ParseCodeResultT => {
 
