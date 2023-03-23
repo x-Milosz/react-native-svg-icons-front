@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { wrapper } from "../main/reducer/store";
@@ -7,6 +7,8 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Head from "next/head";
 import useGetStrings from "../main/front/hooks/useGetStrings.hook";
+import MobileDrawerButton from "../main/front/components/page/MobileDrawerButton";
+import MobileDrawer from "../main/front/components/page/MobileDrawer";
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -22,6 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <p className={styles.ribbonText}>{strings["ribbonText"]}</p>
                 </div>
                 <div className={styles.logoAndButtons}>
+                    <MobileDrawerButton />
                     <div className={styles.logoContainer}>
                         <h1 className={styles.headerTitleText}>
                             {strings["title"]}
@@ -52,9 +55,11 @@ function MyApp({ Component, pageProps }: AppProps) {
                     </div>
                 </div>
             </header>
+            <MobileDrawer />
             <Component {...pageProps} />
         </>
     );
 }
+
 
 export default wrapper.withRedux(MyApp);

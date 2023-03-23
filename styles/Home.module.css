@@ -75,6 +75,7 @@
     user-select: none;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 }
 
@@ -118,6 +119,23 @@
   font-size: 2.5em;
   font-family: "Lobster";
   margin-left: 0.5em;
+}
+
+@media (max-width: 1372px) {
+  .headerTitleText {
+    font-size: 2.5em;
+    font-family: "Lobster";
+    margin: 0px;
+    padding: 0px;
+  }
+}
+
+@media (min-width: 1372px) {
+  .headerTitleText {
+    font-size: 2.5em;
+    font-family: "Lobster";
+    margin-left: 0.5em;
+  }
 }
 
 @media (max-width: 1372px) {

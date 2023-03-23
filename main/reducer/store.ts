@@ -2,11 +2,13 @@ import { configureStore, ThunkAction, Action, ThunkDispatch, AnyAction } from "@
 import { createWrapper } from "next-redux-wrapper";
 import svg from  "./svg/svg.slice";
 import alert from "./alert/alert.slice";
+import util from "./util/util.slice";
 
 const makeStore = () => configureStore({
     reducer: {
         svg: svg,
         alert: alert,
+        util: util,
     },
     devTools: true,
 });
