@@ -41,6 +41,11 @@ const en = {
         point1Link: "https://github.com/x-Milosz/another-react-native-svg-parser",
         point2: "Backend: ",
         point2Link: "https://github.com/x-Milosz/react-native-svg-icons-server",
+    },
+    "404": {
+        pageTitle: "RNSI :: 404",
+        title: "404",
+        description: "Oops, this site does not exist..."
     }
 };
 

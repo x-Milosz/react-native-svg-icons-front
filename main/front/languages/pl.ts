@@ -43,6 +43,11 @@ const pl: typeof en = {
         point1Link: "https://github.com/x-Milosz/react-native-svg-icons-front",
         point2: "Backend: ",
         point2Link: "https://github.com/x-Milosz/react-native-svg-icons-server",
+    },
+    "404": {
+        pageTitle: "RNSI :: 404",
+        title: "404",
+        description: "Ups, ta strona nie istnieje..."
     }
 };
 
