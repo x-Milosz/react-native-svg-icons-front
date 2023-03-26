@@ -44,13 +44,10 @@ const Home: NextPage<HomeI> = ({initialSvgList}: HomeI) => {
     );
 };
 
-// export const getStaticProps: GetStaticProps = async (context) => {
-//     const svgListRepository: SvgListRepository = new SvgListRepositoryImpl();
-//     const initialPage = await svgListRepository.fetchSvgPage(1, 49)
-//     ;
-//     return {
-//         props: {initialSvgList: initialPage}
-//     };
-// };
+export const getStaticProps: GetStaticProps = async (context) => {
+    return {
+        props: {},
+    };
+};
 
 export default Home;

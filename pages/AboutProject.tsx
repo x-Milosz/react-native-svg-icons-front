@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import React from "react";
 import TextContainer from "../main/front/components/ui/TextContainer";
@@ -30,6 +30,12 @@ const AboutProject: NextPage = () => {
             </TextContainer>
         </div>
     );
+};
+
+export const getStaticProps: GetStaticProps = async (context) => {
+    return {
+        props: {},
+    };
 };
 
 export default AboutProject;
