@@ -21,6 +21,9 @@ const AboutProject: NextPage = () => {
             <TextContainer>
                 <h2>{strings["description"]}</h2>
                 <p>{strings["text1"]}</p>
+                <p>{strings["text2"]}</p>
+                <p>{strings["text3"]}</p>
+                <p>{strings["text4"]}</p>
                 <h2>{strings["techStack"]}</h2>
                 <p>{strings["techStackText"]}</p>
                 <ul>
