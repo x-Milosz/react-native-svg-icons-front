@@ -48,6 +48,10 @@ const pl: typeof en = {
         pageTitle: "RNSI :: 404",
         title: "404",
         description: "Ups, ta strona nie istnieje..."
+    },
+    "appCookieConsent": {
+        text: "Ta strona używa cookies i innych narzędzi by umożlwić jej funkcjonowanie.",
+        buttonText: "Jasne!",
     }
 };
 

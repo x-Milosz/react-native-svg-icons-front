@@ -46,6 +46,10 @@ const en = {
         pageTitle: "RNSI :: 404",
         title: "404",
         description: "Oops, this site does not exist..."
+    },
+    "appCookieConsent": {
+        text: "This site uses cookies and other tools to make it useful.",
+        buttonText: "Sure!",
     }
 };
 
