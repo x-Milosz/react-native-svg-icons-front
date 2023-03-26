@@ -9,6 +9,7 @@ import Head from "next/head";
 import useGetStrings from "../main/front/hooks/useGetStrings.hook";
 import MobileDrawerButton from "../main/front/components/page/MobileDrawerButton";
 import MobileDrawer from "../main/front/components/page/MobileDrawer";
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -55,6 +56,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     </div>
                 </div>
             </header>
+            <GoogleAnalytics trackPageViews />
             <MobileDrawer />
             <Component {...pageProps} />
         </>

@@ -1,3 +1,4 @@
+import React from "react";
 import Head from "next/head";
 import TextContainer from "../main/front/components/ui/TextContainer";
 import TextTitle from "../main/front/components/ui/TextTitle";
@@ -5,7 +6,7 @@ import useGetStrings from "../main/front/hooks/useGetStrings.hook";
 import styles from "../styles/404.module.css";
 
 const Page404 = () => {
-    const strings = useGetStrings('404');
+    const strings = useGetStrings("404");
 
     return (
         <div className={styles.main}>
@@ -20,7 +21,7 @@ const Page404 = () => {
                 <p>{strings["description"]}</p>
             </TextContainer>
         </div>
-    )
-}
+    );
+};
 
 export default Page404;
