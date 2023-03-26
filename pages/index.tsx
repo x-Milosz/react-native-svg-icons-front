@@ -16,7 +16,7 @@ interface HomeI {
     initialSvgList: SvgListDto;
 }
 
-const Home: NextPage<HomeI> = ({initialSvgList}: HomeI) => {
+const Home: NextPage<HomeI> = () => {
     const strings = useGetStrings("mainPage");
     const dispatch = useAppDispatch();
 
