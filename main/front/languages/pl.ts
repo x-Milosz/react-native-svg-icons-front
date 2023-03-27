@@ -32,9 +32,9 @@ const pl: typeof en = {
         text3: "Korzystanie z React Native Svg Icons jest proste i intuicyjne. Programiści mogą po prostu importować odpowiedni komponent ikony do swojego projektu i użyć go w swoim kodzie. Komponenty zwracane przez stronę są podatne na modyfikacje i zmiany stylistyczne, co umożliwia dopasowanie ikon do indywidualnych potrzeb projektu.",
         text4: "W przyszłości planowane są dodatkowe funkcjonalności i opcje, które jeszcze bardziej ułatwią korzystanie z React Native Svg Icons. Dzięki temu programiści będą mieli jeszcze większą kontrolę nad ikonami w swoich projektach i będą mogli je dostosować do swoich potrzeb.",
         techStack: "Tech stack",
-        techStackText: "Obecnie projekt się skłąda z następujących części:",
-        techStackList1: "NextJs, Typescript - frontend, konwersja svg",
-        techStackList2: "SpringBoot, Kotlin - backend, obsługa zapytań dotyczących svg",
+        techStackText: "Obecnie projekt się składa z następujących części:",
+        techStackList1: "NextJs, Typescript - frontend, konwersja SVG",
+        techStackList2: "SpringBoot, Kotlin - backend, obsługa zapytań dotyczących SVG",
     },
     "contributionsPage": {
         pageTitle: "RNSI :: Kontrybucje",

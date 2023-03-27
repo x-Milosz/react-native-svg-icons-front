@@ -6,16 +6,16 @@ export namespace CodeShowFrontLogic {
 
         const result: ParseCodeResultT = [];
 
-        for(let i = 1; i < svgLines.length + 1; i++) {
+        for(let i = 0; i < svgLines.length + 1; i++) {
             if(i < svgLines.length) {
                 result.push({
-                    codeLine: i,
+                    codeLine: i + 1,
                     codeLineContent: svgLines[i].text,
                     tabs: svgLines[i].tabs,
                 });
             } else {
                 result.push({
-                    codeLine: i,
+                    codeLine: i + 1,
                     codeLineContent: "",
                     tabs: 0,
                 });

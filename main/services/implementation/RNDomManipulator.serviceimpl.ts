@@ -15,7 +15,6 @@ export class RNDomManipulatorServiceImpl implements RNDomManipulatorService {
 
     private _listOfToDeleteAttributeNamesInTheConversion = [
         "id",
-        // "xmlns",
     ];
 
 
@@ -59,7 +58,7 @@ export class RNDomManipulatorServiceImpl implements RNDomManipulatorService {
             }
 
             if(doNotSetThisAttribute) {
-                break;
+                continue;
             }
 
             convertedDomObjectAttributes[key] = attributes[key];

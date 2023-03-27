@@ -7,18 +7,18 @@ import { DomSerializerService } from "../abstract/domoperatorinternalservices/Do
 
 export class DomOperatorServiceImpl implements DomOperatorService {
     private _domCreator: DomCreatorService;
-    private _domSerialzier: DomSerializerService;
+    private _domSerializer: DomSerializerService;
 
     constructor(domCreator: DomCreatorService, domSerializer: DomSerializerService) {
         this._domCreator = domCreator;
-        this._domSerialzier = domSerializer;
+        this._domSerializer = domSerializer;
     }
 
     public parseAndCreateDomTree(toParseString: string): DomTree {
         return this._domCreator.parseAndCreateDomTree(toParseString);
     }
     public serializeDomTree(domTree: DomTree): string {
-        return this._domSerialzier.serializeDomTree(domTree);
+        return this._domSerializer.serializeDomTree(domTree);
     }
 
 }

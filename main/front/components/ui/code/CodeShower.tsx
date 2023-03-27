@@ -15,7 +15,8 @@ const CodeShower = ({svgLines}: CodeShowerI) => {
     const parsedCode = useMemo(() => {
         return CodeShowFrontLogic.parseCode(svgLines);
     }, [svgLines]);
-    
+
+     
     return (
         <table className={styles.table}>
             {parsedCode.map(it => (

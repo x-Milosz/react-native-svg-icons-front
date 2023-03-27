@@ -31,8 +31,8 @@ const en = {
         text4: "Additional features and options are planned for the future, which will further facilitate the use of React Native Svg Icons. This will give developers even greater control over icons in their projects and enable them to tailor them to their needs.",
         techStack: "Tech stack",
         techStackText: "Project contains of:",
-        techStackList1: "NextJs, Typescript - frontend, svg conversion",
-        techStackList2: "Spring Boot, Kotlin - backend, handling requests for svgs"
+        techStackList1: "NextJs, Typescript - frontend, SVG conversion",
+        techStackList2: "Spring Boot, Kotlin - backend, handling requests for SVGs"
     },
     "contributionsPage": {
         pageTitle: "RNSI :: Contributions",

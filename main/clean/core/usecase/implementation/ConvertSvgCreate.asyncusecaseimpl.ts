@@ -29,14 +29,14 @@ export class ConvertedSvCreateAsyncUseCaseImpl implements ConvertedSvgCreateAsyn
             const fistUpperCaseName = this.createProperName(singleSvg.data.name);   
             
             const svgLines: SvgLines = [];
-            svgLines.push({text: "import * as React from \"react\";", tabs: 0});
+            svgLines.push({text: "import React from \"react\";", tabs: 0});
             svgLines.push({text: "import { View } from \"react-native\";", tabs: 0});
-            svgLines.push({text: "import Svg, { Path, Color }  from \"react-native-svg\";", tabs: 0});
+            svgLines.push({text: "import Svg, { Path }  from \"react-native-svg\";", tabs: 0});
             svgLines.push({text: "", tabs: 0});
             svgLines.push({text: "", tabs: 0});
             svgLines.push({text: `interface ${fistUpperCaseName}I {`, tabs: 0});
             svgLines.push({text: "size: number;", tabs: 1});
-            svgLines.push({text: "color: Color;", tabs: 1});
+            svgLines.push({text: "color: string;", tabs: 1});
             svgLines.push({text: "}", tabs: 0});
             svgLines.push({text: "", tabs: 0});
             svgLines.push({text: `const ${fistUpperCaseName} = ({ size, color }: ${fistUpperCaseName}I) => (`, tabs: 0});
