@@ -3,6 +3,9 @@ export namespace CodeShowFrontLogic {
     export type ParseCodeResultT = {codeLine: number; codeLineContent: string, tabs: number}[];
 
     export const parseCode = (svgLines: SvgLines): ParseCodeResultT => {
+        if(svgLines.length === 0) {
+            return [];
+        }
 
         const result: ParseCodeResultT = [];
 

@@ -14,6 +14,7 @@ const Contributions: NextPage = () => {
         <div className={styles.main}>
             <Head>
                 <title>{strings["pageTitle"]}</title>
+                <meta name="description" content={strings["metaDescription"]} /> 
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <TextTitle>

@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { useAppDispatch } from "../main/reducer/hook";
 import {SvgListDto} from "../main/clean/data/dto/SvgList.dto";
 import { svgListAdapter } from "../main/clean/adapter/SvgList.adapter";
-import { useRouter } from "next/router";
 import useGetStrings from "../main/front/hooks/useGetStrings.hook";
 import IconSelector from "../main/front/components/page/IconSelector";
 import CodeSection from "../main/front/components/page/CodeSection";
@@ -28,6 +27,7 @@ const Home: NextPage<HomeI> = () => {
         <div className={styles.container}>
             <Head>
                 <title>{strings["pageTitle"]}</title>
+                <meta name="description" content={strings["metaDescription"]} />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className={styles.main}>

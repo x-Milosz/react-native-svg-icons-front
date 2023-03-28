@@ -16,7 +16,8 @@ const en = {
         aboutProjectButtonText: "ABOUT PROJECT",
         contribute: "CONTRIBUTE",
         ribbonText: "   •   REACT NATIVE SVG ICONS".repeat(30),
-        searchInputPlaceholder: "Click and search for your icon..."
+        searchInputPlaceholder: "Click and search for your icon...",
+        metaDescription: "Enhance your React Native app with beautiful icons in easy and convenient way. Choose from thousands of icons, then simply copy and paste the optimized SVG code into your project. With React Native Svg Icons, it's easy to add high-quality icons that make your app stand out. Try it now!",
     },
     "paginationOperator": {
         of: " of ",
@@ -32,7 +33,8 @@ const en = {
         techStack: "Tech stack",
         techStackText: "Project contains of:",
         techStackList1: "NextJs, Typescript - frontend, SVG conversion",
-        techStackList2: "Spring Boot, Kotlin - backend, handling requests for SVGs"
+        techStackList2: "Spring Boot, Kotlin - backend, handling requests for SVGs",
+        metaDescription: "Learn more about React Native Svg Icons, here you will find out about everything!",
     },
     "contributionsPage": {
         pageTitle: "RNSI :: Contributions",
@@ -44,6 +46,7 @@ const en = {
         point1Link: "https://github.com/x-Milosz/another-react-native-svg-parser",
         point2: "Backend: ",
         point2Link: "https://github.com/x-Milosz/react-native-svg-icons-server",
+        metaDescription: "Join the React Native Svg Icons community and contribute to the development of this tool. Whether you want to help with code development, testing, documentation, or other areas. Learn more about how you can get involved and help shape the future of React Native Svg Icons!"
     },
     "404": {
         pageTitle: "RNSI :: 404",
