@@ -2,6 +2,10 @@
   line-height: 21px;
 }
 
+.row > td:nth-child(2) {
+  padding-right: 10px;
+}
+
 .numberRowPart {
   text-align: center;
   display: flex;

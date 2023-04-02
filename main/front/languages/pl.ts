@@ -13,7 +13,7 @@ const pl: typeof en = {
     },
     "mainPage": {
         title: "React Native Svg Icons",
-        pageTitle: "RNSI :: Home",
+        pageTitle: "RNSI :: Strona główna",
         homeButtonText: "STRONA GŁÓWNA",
         aboutProjectButtonText: "O PROJEKCIE",
         contribute: "KONTRYBUCJE",
