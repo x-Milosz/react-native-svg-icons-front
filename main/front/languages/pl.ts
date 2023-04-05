@@ -58,6 +58,11 @@ const pl: typeof en = {
     "appCookieConsent": {
         text: "Ta strona używa cookies i innych narzędzi by umożlwić jej funkcjonowanie.",
         buttonText: "Jasne!",
+    },
+    "convertedSvgCopy": {
+        success: "Kod został skopiowany!",
+        noCodeToCopyFirstSelectSvg: "Brak kodu, wybierz najpierw swoje SVG!",
+        couldNotCopyCode: "Nie udało się skopiować kodu.",
     }
 };
 

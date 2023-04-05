@@ -56,6 +56,11 @@ const en = {
     "appCookieConsent": {
         text: "This site uses cookies and other tools to make it useful.",
         buttonText: "Sure!",
+    },
+    "convertedSvgCopy": {
+        success: "Code was copied!",
+        noCodeToCopyFirstSelectSvg: "No code to copy, select SVG first!",
+        couldNotCopyCode: "Could not copy code."
     }
 };
 

@@ -1,22 +1,20 @@
 import React, { useMemo } from "react";
 import CodeShower from "../ui/code/CodeShower";
 import styles from "../../../../styles/components/page/CodeSection.module.css";
-import { useAppSelector } from "../../../reducer/hook";
+import { useAppDispatch, useAppSelector } from "../../../reducer/hook";
 import CodeCopyButton from "../ui/code/CodeCopyButton";
+import { convertedSvgCopyAdapter } from "../../../clean/adapter/ConvertedSvgCopy.adapter";
+import { useRouter } from "next/router";
 
 
 const CodeSection = () => {
+    const dispatch = useAppDispatch();
+    const locale = useRouter().locale;
     const convertedSvg = useAppSelector(state => state.svg.convertedSvg);
 
-    const concatenatedCode = useMemo(() => {
-        const reducedString = convertedSvg.svgLines.reduce((accumulator, currentValue) => {
-            return accumulator + currentValue.text + "\n";
-        }, "");
-        return reducedString;
-    }, [convertedSvg]);
 
     const handleCopyButtonClick = () => {
-        navigator.clipboard.writeText(concatenatedCode);
+        dispatch(convertedSvgCopyAdapter.copyConvertedSvg(locale));
     };
 
     return (

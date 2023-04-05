@@ -24,7 +24,7 @@ class ConvertedSvgAdapter {
             dispatch(SvgThunks.setConvertedSvgThunk(convertedSvg.entity));
             return true;
         } catch(e) {
-            console.error("ConvertedSvgAdapter::convertSvg: ", e);
+            console.error("ConvertedSvgAdapter::convertSvg:", e);
             return false;
         }
     };
