@@ -19,7 +19,8 @@ const pl: typeof en = {
         contribute: "KONTRYBUCJE",
         ribbonText: "   •   REACT NATIVE SVG ICONS".repeat(30),
         searchInputPlaceholder: "Kliknij i wyszukaj swoją ikonę...",
-        metaDescription: "Wzbogać swoją aplikację React Native o piękne ikony w łatwy i wygodny sposób. Wybierz spośród tysięcy ikon, a następnie po prostu skopiuj i wklej zoptymalizowany kod SVG do swojego projektu. Dzięki React Native Svg Icons łatwo dodać wysokiej jakości ikony, które wyróżnią Twoją aplikację. Spróbuj teraz!"
+        metaDescription: "Wzbogać swoją aplikację React Native o piękne ikony w łatwy i wygodny sposób. Wybierz spośród tysięcy ikon, a następnie po prostu skopiuj i wklej zoptymalizowany kod SVG do swojego projektu. Dzięki React Native Svg Icons łatwo dodać wysokiej jakości ikony, które wyróżnią Twoją aplikację. Spróbuj teraz!",
+        emptyPlaceholder: "Brak wyników",
     },
     "paginationOperator": {
         of: " z "
@@ -63,6 +64,9 @@ const pl: typeof en = {
         success: "Kod został skopiowany!",
         noCodeToCopyFirstSelectSvg: "Brak kodu, wybierz najpierw swoje SVG!",
         couldNotCopyCode: "Nie udało się skopiować kodu.",
+    },
+    "codeSection": {
+        emptyPlaceholder: "Wybierz ikonę by wygenerować kod",
     }
 };
 

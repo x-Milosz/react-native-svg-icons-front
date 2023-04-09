@@ -69,16 +69,6 @@
   }
 }
 
-.innerIconSelectorContainer {
-  width: 100%;
-  height: 95%;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(7, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-}
-
 @media (max-width: 1372px) {
   .innerIconSelectorContainer {
     width: 100%;
@@ -88,6 +78,19 @@
     grid-template-rows: repeat(17, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    position: relative;
+    min-height: 50px;
+  }
+
+  .placeholder {
+    color: black;
+    opacity: 30%;
+    position: absolute;
+    top: 30%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    user-select: none;
   }
 }
 
@@ -100,6 +103,18 @@
     grid-template-rows: repeat(7, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    position: relative;
+  }
+
+  .placeholder {
+    color: black;
+    opacity: 30%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    user-select: none;
   }
 }
 

@@ -18,6 +18,7 @@ const en = {
         ribbonText: "   •   REACT NATIVE SVG ICONS".repeat(30),
         searchInputPlaceholder: "Click and search for your icon...",
         metaDescription: "Enhance your React Native app with beautiful icons in easy and convenient way. Choose from thousands of icons, then simply copy and paste the optimized SVG code into your project. With React Native Svg Icons, it's easy to add high-quality icons that make your app stand out. Try it now!",
+        emptyPlaceholder: "No results"
     },
     "paginationOperator": {
         of: " of ",
@@ -61,6 +62,9 @@ const en = {
         success: "Code was copied!",
         noCodeToCopyFirstSelectSvg: "No code to copy, select SVG first!",
         couldNotCopyCode: "Could not copy code."
+    },
+    "codeSection": {
+        emptyPlaceholder: "Select icon to generate code",
     }
 };
 

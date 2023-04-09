@@ -57,6 +57,7 @@ const IconSelector = () => {
                         <p>{it.name}</p>
                     </div>
                 ))}
+                {icons.contentList.length === 0 ? <p className={styles.placeholder}>{strings.emptyPlaceholder}</p> : null}
             </div>
         </div>
     );
