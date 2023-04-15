@@ -22,17 +22,6 @@ p {
   margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-
-  body {
-    color: black;
-    background: #d9d9d9;
-  }
-}
-
 @font-face {
   font-family: "Lobster";
   src: url("../main/front/fonts/Lobster-Regular.ttf");
