@@ -56,6 +56,7 @@
   width: 100%;
   height: 69%;
   display: flex;
+  position: relative;
 }
 
 @media (min-width: 1372px) {
@@ -123,7 +124,7 @@
 
 @media (max-width: 1372px) {
   .headerTitleText {
-    font-size: 2.5em;
+    font-size: 2em;
     font-family: "Lobster";
     margin: 0px;
     padding: 0px;

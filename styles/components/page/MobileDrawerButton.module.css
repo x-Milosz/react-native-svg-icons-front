@@ -3,6 +3,11 @@
     border: none;
     background-color: transparent;
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
   }
 }
 
@@ -15,5 +20,4 @@
 .icon {
   height: 30px;
   width: 30px;
-  margin-top: 23px;
 }
