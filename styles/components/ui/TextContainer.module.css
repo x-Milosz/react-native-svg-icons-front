@@ -1,15 +1,27 @@
-.mainWrapper {
-  max-width: 1200px;
-  display: flex;
-  align-self: center;
-  flex-direction: column;
+@media (max-width: 1372px) {
+  .mainWrapper {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1372px) {
+  .mainWrapper {
+    max-width: 1200px;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+  }
 }
 
 .mainWrapper > h2 {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .mainWrapper > p {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   text-align: justify;
 }

@@ -5,7 +5,7 @@ import React from "react";
 import TextContainer from "../main/front/components/ui/TextContainer";
 import TextTitle from "../main/front/components/ui/TextTitle";
 import useGetStrings from "../main/front/hooks/useGetStrings.hook";
-import styles from "../styles/AboutProject.module.css";
+import styles from "../styles/Contributions.module.css";
 
 const Contributions: NextPage = () => {
     const strings = useGetStrings("contributionsPage");
@@ -18,7 +18,7 @@ const Contributions: NextPage = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <TextTitle>
-                <h1>{strings["title"]}</h1>
+                <h1 className={styles.title}>{strings["title"]}</h1>
             </TextTitle>
             <TextContainer>
                 <p>{strings["text"]}</p>
