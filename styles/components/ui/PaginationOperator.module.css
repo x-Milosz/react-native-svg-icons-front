@@ -17,10 +17,10 @@
   .paginationOperatorWrapper {
     display: flex;
     flex-direction: row;
-    width: 15%;
+    width: 20%;
   }
   .pageDescriptionWrapper > p {
-    font-size: 0.7rem;
+    font-size: 1rem;
     user-select: none;
   }
 }
