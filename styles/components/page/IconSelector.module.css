@@ -143,3 +143,14 @@
   text-align: center;
   user-select: none;
 }
+
+@media (max-width: 1372px) {
+  .searchIcon {
+  }
+}
+
+@media (min-width: 1372px) {
+  .searchIcon {
+    transform: translateY(-2px);
+  }
+}

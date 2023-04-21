@@ -28,7 +28,7 @@ const IconSelector = () => {
         <div className={styles.iconSelectorContainer}>
             <div className={styles.searchContainer}>
                 <div className={styles.innerSearchContainer}>
-                    <MaterialDesign.MdSearch size={30} />
+                    <MaterialDesign.MdSearch className={styles.searchIcon} size={30} />
                     <input
                         value={inputText}
                         onChange={(val) => {
