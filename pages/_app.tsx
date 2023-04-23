@@ -15,11 +15,27 @@ import AppCookieConsent from "../main/front/components/ui/AppCookieConsent";
 
 function MyApp({ Component, pageProps }: AppProps) {
     const strings = useGetStrings("mainPage");
-    
+ 
     return (
         <>
             <Head>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta> 
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+                { typeof window !== undefined ? 
+                    <>
+                        <script
+                            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TAG}`} />
+                        <script>
+                            {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', '${process.env.GA_TAG}', {
+                    page_path: window.location.pathname,
+                    });
+                `}
+                        </script>
+                    </>
+                    : null}
             </Head>
             <header className={styles.header}>
                 <div className={styles.ribbon}>
